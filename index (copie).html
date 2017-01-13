@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8" />
+		 <link rel="stylesheet" href="style.css" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <title>Titre</title>
+
+    </head>
+
+
+
+  <body>
+<h1>essaie</h1>
+	<p id='article'>
+	Je suis ici
+	</p>      
+    <p>
+    </p>
+    <p id ="troisieme"> 
+    <span> Salut tout le monde </span>
+    <img src="photo.jpg" alt="Premiere"/>
+    </p>
+    
+    
+    
+    <script type="text/javascript">
+    
+    jQuery.noConflict();
+    (function($) { 
+
+  $(function() {
+
+    // if($('#article').length>0){
+ 		// $('#article').after($('#article').length+" "+$('#article').size());
+ 		//}
+ 		
+ 		//$('#troisieme').text();
+ 		//	$('#troisieme').html('<strong> les pommes </strong>');
+ 			
+ 		
+
+//pour changer le titre 
+document.title="coucou";
+$('title').text();
+
+//Remplacer la balise
+/**
+$('p').replaceWith('<article>Hihi</article>');
+A.replaceWith(B); // B va remplacer A.
+A.replaceAll(B): // A va remplacer B.**/
+
+
+//Insertion à l'interieur ou à l'exterieur pour eviter la reecriture complete à chaque fois
+/**
+$('#troisieme').append('essaie');
+
+$('#troisieme').prepend('essaieavant'); 
+
+$('#article').appendTo('#troisieme'); //change le sens
+
+$('#article').after('<p>coucoucouco</p>');
+
+$('#article').insertBefore($('h1:first'));**/
+
+/**
+Soient A et B deux objets jQuery.
+A.prepend(B); A.append(B); // B va se placer avant / après A.
+A.prependTo(B); A.appendTo(B); // A va se placer avant / après B.
+
+Les méthodes append() / prepend() / appendTo() / prependTo() changent le contenu à l'intérieur, c'est à dire que faire $('p').prepend('Paragraphe : ') dans <p>Comment tu vas ?</p>, change le paragraphe en : <p>Paragraphe : Comment tu vas ?</p>.
+
+Les méthodes after() / before() / insertAfter() / insertBefore() sont les équivalents de ces méthodes, à l'exception qu'elles ajoutent à l'extérieur des balises. Elles fonctionnent donc de la même manière : on passe en argument un objet jQuery ou du contenu html à after() / before() et un sélecteur jQuery ou un objet jQuery à insertAfter() / insertBefore().
+**/
+
+
+//wrap
+
+$('p').wrap('<article></article>');
+/**
+$('.contenu').wrap('<em>le contenu</em> ira là : <div></div> mais pas <strong>là</strong>');
+// Le contenu sera entre les <em></em> mais aussi les <q></q>.
+$('span').wrap('<em id="ici"></em> et là <q></q>');
+
+
+Intérieur 
+$('span.italique').wrapInner('<i></i>');
+
+$('h1:first').wrapInner('<a href="http://google.com"></a>');
+
+$('a').wrapInner('<em>Ceci est un lien : </em><u></u>');
+
+
+wrapAll() est similaire à wrap() à l'exception que si ce dernier enveloppe chaque élément un par un, wrapAll() enveloppe tous les éléments d'un coup.
+
+$('input.premierFormulaire').wrapAll('<form></form>');
+
+$('q').wrapAll('<div class="groupeDeCitations"></div>');
+
+
+unwrap() est une méthode permettant de « désenvelopper » (ou déballer) un élément. C'est-à-dire enlever la balise parent qui l'enveloppe.
+
+$('b > span').unwrap(); sur <p>Hello <b>Wor<span>ld</span></b></p> donne <p>Hello Wor<span>ld</span></p> .
+
+**/
+
+
+
+//clone() 
+/**
+// Multiplie le nombre de boutons par 2.
+
+$('button').clone().appendTo($('body'));
+
+// Revient à faire :
+
+$('body').append($('button').clone());
+
+**/
+//remove
+/**
+l ne sert à rien d'appeler remove() avant d'appeler des méthodes qui insèrent l'élément quelque part dans le document (prependTo(), appendTo(), insertBefore() et insertAfter()), car ces méthodes vont supprimer l'élément avant de l'insérer.
+
+// Supprime les liens de la page ayant la classe "sites".
+
+$('a').remove('.sites');
+
+// Supprime les balises <strong> dans des <button>.
+
+$('button strong').remove();
+
+
+**/
+
+//empty
+/**
+
+$('button').empty(); // Vide les boutons.
+
+$('body').empty(); // Vide la page web.
+
+// Revient à faire :
+
+$('body').html('');
+**/
+
+
+
+
+
+  });
+   
+ })(jQuery);
+
+	
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+
+</html>

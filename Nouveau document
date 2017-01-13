@@ -1,0 +1,139 @@
+Expression
+	
+
+Retour
+
+*
+	
+
+Toutes les balises.
+
+elem
+	
+
+Les balises elem.
+
+#id
+	
+
+Balise ayant l'id "id".
+
+.class
+	
+
+Balises ayant la classe "class".
+
+elem[attr]
+	
+
+Balises elem dont l'attribut "attr" est spécifié.
+
+elem[attr="val"]
+	
+
+Balises elem dont l'attribut "attr" est à la valeur val.
+
+elem bal
+	
+
+Balises bal contenues dans une balise elem.
+
+elem > bal
+	
+
+Balises bal directement descendantes de balises elem.
+
+elem + bal
+	
+
+Balises bal immédiatement précédées d'une balise elem.
+
+elem ~ bal
+	
+
+Balises bal précédées d'une balise elem.
+
+
+Voici les sélecteurs CSS 3 qui ne sont pas supportés par jQuery : :link, :visited, :active, :hover, :focus, :target, ::selection, :first-letter, :first-line, :before, :after, :nth-last-child(), :nth-of-type(), :nth-last-of-type(), :first-of-type, :last-of-type, :only-of-type, :lang(fr).
+Sélecteurs spécifiques à jQuery
+
+Expression
+	
+
+Retour
+
+:hidden
+	
+
+Éléments invisibles, cachés.
+
+:visible
+	
+
+Éléments visibles.
+
+:parent
+	
+
+Éléments qui ont des éléments enfants.
+
+:header
+	
+
+Balises de titres : h1, h2, h3, h4, h5 et h6.
+
+:not(s)
+	
+
+Éléments qui ne sont pas sélectionnés par le sélecteur s.
+
+:has(s)
+	
+
+Éléments qui contiennent des éléments sélectionnés par le sélecteur s.
+
+:contains(t)
+	
+
+Éléments qui contiennent du texte t.
+
+:empty
+	
+
+Éléments dont le contenu est vide.
+
+:eq(n) et :nth(n)
+	
+
+Le n-ième élément, en partant de zéro.
+
+:gt(n) (greater than, signifiant plus grand que)
+	
+
+Éléments dont le numéro (on dit l'« index ») est plus grand que n.
+
+:lt(n) (less than, signifiant plus petit que)
+	
+
+Éléments dont l'index est plus petit que n.
+
+:first
+	
+
+Le premier élément (équivaut à :eq(0)).
+
+:last
+	
+
+Le dernier élément.
+
+:even (pair)
+	
+
+Éléments dont l'index est pair.
+
+:odd (impair)
+	
+
+Éléments dont l'index est impair.
+

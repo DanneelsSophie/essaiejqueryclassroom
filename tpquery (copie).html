@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8" />
+		 <link rel="stylesheet" href="style.css" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <title>Titre</title>
+
+    </head>
+
+
+
+  <body>
+<p id="contenu"> 
+
+  Lorem <span class="vert">ipsum dolor</span> sit amet, <span class="titre2"> 
+
+  consectetur adipiscing elit</span>.Etiam <a href="#">facilisis</a>  
+
+  <span class="rouge">ultrices</span> dolor, eu <span class="orange">fermentum 
+
+   eros</span> aliquet ac. Aenean varius <span class="titre2">ultrices nisi 
+
+  </span> vel aliquet. Nam eu viverra sem. <span class="gras">Fusce facilisis 
+
+  </span> eros ac <span class="titre1">elit scelerisque molestie</span>. Morbi 
+
+   lacus orci, interdum ac <span class="souligne">faucibus hendrerit</span>, 
+
+   <span class="barre">facilisis vel</span> nunc. <span class="souligne">Sed in 
+
+  </span> <span class="bleu">mauris</span> <span class="gras">lorem</span>.  
+
+  Integer facilisis, <span class="italique">augue et suscipit</span> molestie, 
+
+   <span class="barre">lectus lectus</span> pellentesque mi, <span class="vert"> 
+
+  at</span> condimentum <span class="italique">nulla</span> nibh ut turpis. <span> 
+
+  Cum sociis</span> natoque <span class="vert">penatibus et magnis</span> dis  
+
+  <a href="#">parturient montes</a>, nascetur ridiculus mus. Etiam quis nisl  
+
+  metus.<span class="vert">Phasellus</span>ullamcorper posuere augue quis placerat.  
+
+  <span class="titre1">Duis sed quam</span>odio. Donec <span class="vert">aliquam 
+
+   metus</span> a <a href="#">ligula lacinia</a> a tempor leo <span class="bleu">imperdiet</span>. 
+
+   Cras augue purus, <span class="souligne">lobortis eu</span> scelerisque sed, 
+
+   <span class="vert">venenatis ut</span> turpis. Donec <span class="bleu">quis 
+
+   magna sapien</span>. Ut ut diam arcu. <span class="souligne">Suspendisse nec 
+
+   risus</span> id lacus venenatis <a href="#">rhoncus.</a> In vitae  
+
+  <span class="vert">justo tellus</span>, <span class="bleu">vitae lacinia nunc 
+
+  </span>. Aliquam <span class="italique">erat</span> <span class="rouge">volutpat.</span> 
+
+</p>
+
+    
+    
+    <script type="text/javascript">
+    
+        // Affiche 'HTML'.
+
+//alert($('body').parent()[0].tagName);
+
+// Affiche 'HEAD'.
+
+//alert($('title').parents()[0].tagName);
+
+
+
+
+
+
+
+//une fonction aux mathodes
+
+
+/**
+
+Pour html() : l'utilisation $('#titre').html('Ceci est le titre de la page !'); est setter alors que l'utilisation alert( $('#titre').html() ); est getter !
+
+
+$(expression).methode(function(){
+
+  // Action
+
+});
+
+function maFonction(){
+  // Action
+};
+$(expression).methode(maFonction);
+
+
+
+**/
+
+$('span').prepend(function(i){
+
+  return i + 'ème : ';
+
+});
+
+//function en JS function myfunction(args){}
+// (function(){})
+
+//attr
+
+/**
+// Renvoie l'attribut 'title'
+
+// de l'élément ayant comme id 'titre'.
+
+$('#titre').attr('title');
+
+// Écrit après #titre son attribut 'title'.
+
+$('#titre').after($('#titre').attr('title'));
+
+
+each() est une méthode qui permet d'itérer (de boucler) sur les éléments d'un objet jQuery. C'est un peu l'équivalent en plus simple d'une boucle for.
+On lui passe en argument une fonction anonyme qui va être appelée autant de fois qu'il y a d'éléments dans l'objet jQuery. La fonction sera donc un bout de code qui s'exécutera pour chaque élément. Si cette fonction retourne false, each()s'arrête d'itérer.
+
+Cette fonction peut avoir un argument qui représente l'indice de l'élément en question (c'est le combien-ème ?) ou non. La variable commence à zéro et peut être nommée comme on le veut.
+this représentera l'élément en question donc $(this)l'objet jQuery en question.
+
+$.each() est une fonction (contenue dans l'objet jQuery) dérivée de la méthode each(), la différence étant qu'elle permet d'itérer sur un tableau ou un objet, passé en premier argument.
+Son utilisation est assez simple :
+
+    si la variable passée en paramètre est un tableau, le premier argument de la fonction est l'index de l'élément courant dans le tableau et le second argument (ainsi que le mot-clé this) est la valeur de l'élément ;
+
+    si la variable passée en paramètre est un objet, le premier argument de la fonction est un attribut et le second argument (ainsi que le mot-clé this) est la valeur de cet attribut.
+
+Dans le second cas, faites attention à ne pas mettre un attribut length à l'objet passé en paramètre à $.each(), sinon cette fonction va agir comme si l'objet était un tableau (et ainsi n'agir que sur les éléments 0, 1 ... jusqu'à length-1).
+
+Il peut arriver qu'on passe à $.each() une fonction déclarée avant l'appel à la méthode en question.
+Ce dernier ne peut donc pas accéder aux variables déclarées dans le bloc qui contient l'appel à cette méthode.
+
+Pour palier ce problème, un troisième argument, facultatif, existe pour $.each() (second pour each() ) : un tableau.
+Les valeurs de ce tableau passé en paramètre seront les arguments de la fonction de retour passée.
+Cette fonction n'a donc plus les deux premiers arguments cités plus haut. On ne peut donc plus connaître l'index ou encore le nom de l'attribut.
+
+map() et $.map() sont des dérivés de each() et $.each(). La méthode boucle sur l'objet jQuery et la fonction boucle sur les données (passés en paramètres).
+map() renvoie l'objet jQuery où chaque élément est remplacé par ce qu'a retourné la fonction (return ).
+
+Le gros problème est qu'on ne peut pas utiliser cet objet jQuery comme un tableau ;
+exécuter par exemple join(', ') afin de séparer les valeurs et transformer le tableau en chaîne de caractères.
+
+La réponse est bien évidemment la méthode get() apprise au début du chapitre. ;)
+
+// Liste tous les liens de la page.
+
+alert(
+
+  $('a').map(function(){
+
+    return $(this).attr('href');
+
+  }).get().join('\n'));
+
+
+alert(
+
+  $('#contenu *').map(function(){
+
+    return this.tagName;
+
+  }).get().join(', '));
+
+
+$.map() renvoie un tableau où chaque élément est remplacé par ce qu'a retourné la fonction. On peut passer un objet, à condition de spécifier un attribut length, et la fonction va parcourir les éléments 0, 1 ... jusqu'à length-1.
+
+A l'inverse de $.each(), $(expression).map(fonction)n'est pas équivalent à $.map($(expression),fonction) ; les différences sont les arguments de la fonction de retour ainsi que le mot-clé this :
+
+    Pour map(), le premier argument est l'index et le second ainsi que this l'élément courant.
+
+    Pour $.map(), le premier argument est la valeur du tableau et le second l'index. this n'est pas précisé, donc est égale à la variable window.
+
+**/
+     </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+
+</html>
